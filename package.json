@@ -1,6 +1,6 @@
 {
   "name": "@artginzburg/use-scroll-sync",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sync scroll positions between multiple elements (on both axes).",
   "author": "Travis Arnold",
   "contributors": [
