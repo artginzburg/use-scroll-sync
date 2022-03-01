@@ -1,13 +1,24 @@
 import * as React from 'react'
 
+// https://stackoverflow.com/a/49725198/11474669
+type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<
+  T,
+  Exclude<keyof T, Keys>
+> &
+  {
+    [K in Keys]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<Keys, K>>>
+  }[Keys]
+
+type UseScrollSyncOptions = {
+  horizontal: true
+  vertical: true
+}
+
 /**
  * Sync scroll positions between multiple refs.
  */
 export function useScrollSync(
-  options: {
-    horizontal?: boolean
-    vertical?: boolean
-  },
+  options: RequireAtLeastOne<UseScrollSyncOptions>,
   ...refs: Array<{ current?: HTMLElement | null }>
 ) {
   const timeoutId = React.useRef<ReturnType<typeof setTimeout>>(null)
