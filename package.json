@@ -1,13 +1,13 @@
 {
-  "name": "use-scroll-sync",
-  "version": "1.0.0",
-  "description": "Sync scroll positions between multiple elements.",
+  "name": "@artginzburg/use-scroll-sync",
+  "version": "1.0.1",
+  "description": "Sync scroll positions between multiple elements (on both axes).",
   "author": "Travis Arnold",
+  "contributors": [
+    "Art Ginzburg <art.ginzburg@ya.ru> (https://ginzburg.art)"
+  ],
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/souporserious/use-scroll-sync.git"
-  },
+  "repository": "artginzburg/use-scroll-sync",
   "module": "dist/use-scroll-sync.esm.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

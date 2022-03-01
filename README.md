@@ -2,16 +2,18 @@
 
 Sync scroll positions between multiple elements.
 
+This fork differs from the main one — it allows to also sync vertical scrolling position, in addition to horizontal, and requires first argument as the synchronization options.
+
 <small>Note, if the main thread is too busy or the user's battery is low, scrollbars can get out of sync.</small>
 
 ## Install
 
 ```bash
-yarn add use-scroll-sync
+yarn add @artginzburg/use-scroll-sync
 ```
 
 ```bash
-npm install use-scroll-sync
+npm install @artginzburg/use-scroll-sync
 ```
 
 ## Example
@@ -23,7 +25,7 @@ import { useScrollSync } from 'use-scroll-sync'
 function SyncedScrollbars() {
   const headerRef = React.useRef()
   const mainRef = React.useRef()
-  useScrollSync(headerRef, mainRef)
+  useScrollSync({ vertical: true }, headerRef, mainRef)
   return (
     <div>
       <header ref={headerRef}>...</header>
